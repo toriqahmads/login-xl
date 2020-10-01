@@ -6,7 +6,7 @@ ini_set('max_execution_time', 300000000);
 function getCookie($socks = null)
 {
 	$fp = fopen(dirname(__FILE__) . "/cookies.txt", "w");
-	$link = "https://my.xl.co.id/pre/index1.html#/login";
+	$link = "https://my.xl.co.id/pre/index1.html#/";
 
 	$c = curl_init($link);
 	curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
@@ -28,7 +28,7 @@ function getCookie($socks = null)
 
 function login($no, $pass, $socks = 0)
 {
-	$link = "https://my.xl.co.id/pre/LoginV2Rq";
+	$link = "https://my.xl.co.id/pre/LoginSendOTPRq";
 
 	$no = urldecode($no);
 	$pass = urldecode($pass);
@@ -42,7 +42,7 @@ function login($no, $pass, $socks = 0)
 	$header[] = "Referer: https://my.xl.co.id/pre/index1.html";
 	$header[] = "Connection: keep-alive";
 
-	$datas ='{"Header":null,"Body":{"Header":{"IMEI":1806676605,"ReqID":"'.date('Ymdhis').'"},"LoginV2Rq":{"msisdn":"'.$no.'","pass":"'.$pass.'"}},"onNet":"False","sessionId":null,"staySigned":"True","serviceId":"","packageAmt":"","reloadType":"","reloadAmt":"","packageRegUnreg":"","platform":"04","onNetLogin":"YES","appVersion":"3.5.2","sourceName":"Firefox","sourceVersion":""}';
+	$datas ='{"Header":null,"Body":{"Header":{"ReqID":"20201001184949"},"LoginSendOTPRq":{"msisdn":"62877384758574"}},"sessionId":null,"onNet":"False","platform":"04","serviceId":"","packageAmt":"","reloadType":"","reloadAmt":"","packageRegUnreg":"","appVersion":"3.9.10","sourceName":"Others","sourceVersion":"","screenName":"login.enterLoginNumber"}';
 
 	$c = curl_init($link);
 	curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
